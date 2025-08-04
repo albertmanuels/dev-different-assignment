@@ -6,11 +6,8 @@ const PropertyPage = async () => {
   const properties = await getProperties();
 
   return (
-    <div className="w-full">
-      <h1 className="text-4xl font-bold">Property Page</h1>
-      <p className="mt-4 text-lg">
-        This is a placeholder for the property page.
-      </p>
+    <div className="w-full container mx-auto px-6 pb-10">
+      <h1 className="text-4xl font-bold mb-8">Properties List</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {properties.map((property) => (
           <PropertyCard key={property.currentSlug} property={property} />

@@ -11,11 +11,6 @@ interface PropertyCardProps {
 }
 
 export const PropertyCard = ({ property }: PropertyCardProps) => {
-  const truncatedDescription =
-    property?.description?.length > 50
-      ? `${property.description.substring(0, 50)}...`
-      : property.description;
-
   return (
     <Link href={`/property/${property.currentSlug}`}>
       <Card className="group h-full bg-card border-border shadow-property-card hover:shadow-property-card-hover transition-smooth cursor-pointer overflow-hidden pt-0">
@@ -29,27 +24,19 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
           />
         </div>
         <CardContent>
-          <div className="flex items-start justify-between mb-3">
+          <div className="flex items-start justify-between mb-2">
             <h3 className="text-xl font-semibold text-card-foreground group-hover:text-primary transition-smooth line-clamp-1">
               {property.title}
             </h3>
           </div>
 
-          <div className="flex items-center text-muted-foreground mb-5">
+          <div className="flex items-center text-muted-foreground mb-2">
             <MapPin className="w-4 h-4 mr-1" />
-            <span className="text-sm">{property?.location}</span>
+            <span className="text-sm">{property.location}</span>
           </div>
-
-          <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-primary">
-              {formatCurrency(property.price)}
-            </div>
-            <div className="flex items-center space-x-3 text-muted-foreground text-sm"></div>
+          <div className="text-2xl font-bold text-primary">
+            {formatCurrency(property.price)}
           </div>
-
-          <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-            {truncatedDescription}
-          </p>
         </CardContent>
       </Card>
     </Link>

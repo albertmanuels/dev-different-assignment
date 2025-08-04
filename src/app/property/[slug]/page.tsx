@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   ArrowLeft,
@@ -18,7 +17,9 @@ import { formatCurrency } from "@/lib/globals";
 import { PortableText } from "next-sanity";
 
 const PropertyDetail = async ({ params }) => {
-  const property = await getPropertyDetail(params?.slug);
+  const { slug } = await params;
+
+  const property = await getPropertyDetail(slug);
 
   if (!property) {
     return (
@@ -38,7 +39,6 @@ const PropertyDetail = async ({ params }) => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
       <div className="container mx-auto px-4 py-6">
         <Link href="/">
           <Button variant="outline" className="mb-6">
@@ -48,7 +48,6 @@ const PropertyDetail = async ({ params }) => {
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Image Section */}
           <div className="lg:col-span-2">
             <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-property-card mb-6">
               <Image
@@ -61,15 +60,11 @@ const PropertyDetail = async ({ params }) => {
             </div>
           </div>
 
-          {/* Details Section */}
           <div className="lg:col-span-1">
             <Card className="sticky top-6">
               <CardContent className="p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <Badge variant="secondary" className="mb-3">
-                      {property.type}
-                    </Badge>
                     <h1 className="text-2xl font-bold text-foreground mb-2">
                       {property.title}
                     </h1>
@@ -92,7 +87,6 @@ const PropertyDetail = async ({ params }) => {
                   {formatCurrency(property.price)}
                 </div>
 
-                {/* Property Features */}
                 <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-accent rounded-lg">
                   <div className="text-center">
                     <Bed className="w-6 h-6 mx-auto mb-2 text-primary" />
@@ -128,18 +122,9 @@ const PropertyDetail = async ({ params }) => {
           <Card>
             <CardContent className="p-6">
               <h2 className="text-xl font-semibold mb-4">Description</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {property.description}
-              </p>
+              <PortableText value={property.content} />
             </CardContent>
           </Card>
-          {property.content && (
-            <Card>
-              <CardContent className="p-6">
-                <PortableText value={property.content} />
-              </CardContent>
-            </Card>
-          )}
         </div>
       </div>
     </div>
