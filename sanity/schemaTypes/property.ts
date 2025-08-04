@@ -18,25 +18,24 @@ export default {
       }
     },
     {
+      name: 'titleImage',
+      type: 'image',
+      title: 'Title Image',
+    },
+    {
+      name: 'location',
+      type: 'string',
+      title: 'Location'
+    },
+    {
       name: 'price',
       type: 'number',
       title: 'Price'
     },
     {
-      name: 'images',
-      type: 'array',
-      title: 'Images',
-      of: [{ type: 'image' }]
-    },
-    {
       name: 'description',
       type: 'text',
       title: 'Description'
-    },
-    {
-      name: 'isPublished',
-      type: 'boolean',
-      title: 'Is Published'
     },
     {
       name: "content",
@@ -45,6 +44,11 @@ export default {
       of: [
         { type: "block" },
       ] 
-    }
+    },
+    {
+      name: 'isPublished',
+      type: 'boolean',
+      title: 'Is Published'
+    },
   ]
 }
