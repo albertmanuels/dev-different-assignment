@@ -2,6 +2,8 @@
 
 A modern, responsive property listing platform built with Next.js 15, TypeScript, and Sanity CMS. Browse and explore stunning properties with a beautiful, intuitive interface.
 
+🌐 **Live Demo**: [https://real-estate-dev-different.vercel.app/](https://real-estate-dev-different.vercel.app/)
+
 ## 🏠 Features
 
 - **Modern Property Cards** - Beautiful, responsive property card layouts
@@ -101,6 +103,7 @@ Sanity Studio will be available at [http://localhost:3333](http://localhost:3333
 
 **Alternative: Use Sanity Studio in the cloud**
 - Access your studio at `https://your-project-id.sanity.studio`
+- **For this project**: [https://real-estate-dev-different.sanity.studio/structure/property](https://real-estate-dev-different.sanity.studio/structure/property)
 - No local setup required
 
 ## 🚀 Running the Application
