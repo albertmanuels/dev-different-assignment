@@ -109,7 +109,7 @@ const PropertyDetail = async ({ params }) => {
                   </div>
                 </div>
 
-                <Button className="w-full bg-gradient-primary hover:opacity-90 transition-smooth">
+                <Button className="w-full transition-smooth">
                   Contact Agent
                 </Button>
               </CardContent>
@@ -122,7 +122,9 @@ const PropertyDetail = async ({ params }) => {
           <Card>
             <CardContent className="p-6">
               <h2 className="text-xl font-semibold mb-4">Description</h2>
-              <PortableText value={property.content} />
+              <div className="prose">
+                <PortableText value={property.description} />
+              </div>
             </CardContent>
           </Card>
         </div>

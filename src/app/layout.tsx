@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="fixed top-0 left-0 right-0 bg-background shadow-md z-10 isolate py-4">
+        <header className="fixed top-0 left-0 right-0 bg-background shadow-md z-10 isolate py-4 px-4 lg:px-0">
           <div className="container mx-auto py-2 flex items-center justify-between">
             <Link href="/" className="text-3xl font-bold">
               Real Estate

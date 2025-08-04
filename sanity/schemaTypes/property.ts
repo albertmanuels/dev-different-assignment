@@ -11,7 +11,7 @@ export default {
     {
       name: 'slug',
       type: 'slug',
-      title: 'Slug of the property',
+      title: 'Slug',
       options: {
         source: 'title',
         maxLength: 96
@@ -28,27 +28,37 @@ export default {
       title: 'Location'
     },
     {
+      name: 'bathrooms',
+      type: 'number',
+      title: 'Bathrooms'
+    },
+    {
+      name: 'bedrooms',
+      type: 'number',
+      title: 'Bedrooms'
+    },
+    {
+      name: 'area',
+      type: 'number',
+      title: 'Area (in m²)'
+    },
+    {
       name: 'price',
       type: 'number',
-      title: 'Price'
+      title: 'Price (in USD)'
     },
     {
       name: 'description',
-      type: 'text',
-      title: 'Description'
-    },
-    {
-      name: "content",
-      type: "array",
-      title: "Content",
+      type: 'array',
+      title: 'Description',
       of: [
         { type: "block" },
       ] 
     },
     {
-      name: 'isPublished',
+      name: 'published',
       type: 'boolean',
-      title: 'Is Published'
+      title: 'Published'
     },
   ]
 }

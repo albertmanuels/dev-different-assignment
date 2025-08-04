@@ -1,3 +1,4 @@
+import { Property, PropertyDetail } from "@/lib/interface";
 import { client } from "@/lib/sanity";
 
 export async function getPropertyDetail(slug: string) {
@@ -8,13 +9,19 @@ export async function getPropertyDetail(slug: string) {
     titleImage,
     description,
     location,
+    bathrooms,
+    bedrooms,
+    published,
+    area,
     "currentSlug": slug.current,
     content
   }[0]`;
 
   const data = await client.fetch(query);
 
-  return data;
+  const publishedProperty = data.published ? data : null;
+
+  return publishedProperty as PropertyDetail;
 }
 
 export async function getProperties() {
@@ -25,9 +32,12 @@ export async function getProperties() {
     titleImage,
     location,
     description,
+    published,
     "currentSlug": slug.current,
   }`;
 
   const data = await client.fetch(query);
-  return data;
+
+  const publishedProperties = data.filter((property: Property) => property.published);
+  return publishedProperties as Property[];
 }

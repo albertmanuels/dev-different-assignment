@@ -2,12 +2,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { PropertyDetail } from "@/lib/interface";
+import { Property } from "@/lib/interface";
 import { urlFor } from "@/lib/sanity";
 import { formatCurrency } from "@/lib/globals";
 
 interface PropertyCardProps {
-  property: Omit<PropertyDetail, "content">;
+  property: Property;
 }
 
 export const PropertyCard = ({ property }: PropertyCardProps) => {

@@ -5,6 +5,8 @@ import React from "react";
 const PropertyPage = async () => {
   const properties = await getProperties();
 
+  console.log("Properties:", properties);
+
   return (
     <div className="w-full container mx-auto px-6 pb-10">
       <h1 className="text-4xl font-bold mb-8">Properties List</h1>
