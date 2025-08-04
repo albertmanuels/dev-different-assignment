@@ -16,9 +16,8 @@ import { urlFor } from "@/lib/sanity";
 import { formatCurrency } from "@/lib/globals";
 import { PortableText } from "next-sanity";
 import BackButton from "@/components/BackButton";
-import { REVALIDATE_IN_SECONDS } from "@/constants/globals";
 
-export const revalidate = REVALIDATE_IN_SECONDS;
+export const revalidate = 30; // Revalidate every 30 seconds
 
 const PropertyDetail = async ({ params }) => {
   const { slug } = await params;
