@@ -16,6 +16,9 @@ import { urlFor } from "@/lib/sanity";
 import { formatCurrency } from "@/lib/globals";
 import { PortableText } from "next-sanity";
 import BackButton from "@/components/BackButton";
+import { REVALIDATE_IN_SECONDS } from "@/constants/globals";
+
+export const revalidate = REVALIDATE_IN_SECONDS;
 
 const PropertyDetail = async ({ params }) => {
   const { slug } = await params;

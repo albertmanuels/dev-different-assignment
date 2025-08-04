@@ -1,6 +1,9 @@
 import { PropertyCard } from "@/components/PropertyCard";
+import { REVALIDATE_IN_SECONDS } from "@/constants/globals";
 import { Property } from "@/lib/interface";
 import { getProperties } from "@/services/properties.services";
+
+export const revalidate = REVALIDATE_IN_SECONDS;
 
 export default async function Home() {
   const properties: Property[] = await getProperties();

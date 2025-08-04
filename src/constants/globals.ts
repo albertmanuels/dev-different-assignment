@@ -1,0 +1,1 @@
+export const REVALIDATE_IN_SECONDS = 30; // Revalidate every 30 seconds

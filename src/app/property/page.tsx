@@ -1,6 +1,9 @@
 import { PropertyCard } from "@/components/PropertyCard";
+import { REVALIDATE_IN_SECONDS } from "@/constants/globals";
 import { getProperties } from "@/services/properties.services";
 import React from "react";
+
+export const revalidate = REVALIDATE_IN_SECONDS;
 
 const PropertyPage = async () => {
   const properties = await getProperties();
