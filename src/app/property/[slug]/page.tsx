@@ -15,6 +15,7 @@ import { getPropertyDetail } from "@/services/properties.services";
 import { urlFor } from "@/lib/sanity";
 import { formatCurrency } from "@/lib/globals";
 import { PortableText } from "next-sanity";
+import BackButton from "@/components/BackButton";
 
 const PropertyDetail = async ({ params }) => {
   const { slug } = await params;
@@ -29,7 +30,7 @@ const PropertyDetail = async ({ params }) => {
           <Link href="/">
             <Button variant="outline">
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Properties
+              Back to Home
             </Button>
           </Link>
         </div>
@@ -40,12 +41,9 @@ const PropertyDetail = async ({ params }) => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-6">
-        <Link href="/">
-          <Button variant="outline" className="mb-6">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Properties
-          </Button>
-        </Link>
+        <div className="mb-8">
+          <BackButton />
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
